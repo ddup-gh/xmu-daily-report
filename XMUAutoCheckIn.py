@@ -85,17 +85,17 @@ def checkin(cfg: Config, use_vpn=True) -> None:
     # 开始工作
     job = click_mytable()
     job.add_child(
-        dropdown_province("福建省"),
-        dropdown_city("厦门市"),
-        dropdown_district(cfg.district),
-        dropdown_inschool(cfg.inschool).add_child(
-            dropdown_campus(cfg.campus),
-            dropdown_stay_in_school("住校内"),
-            dropdown_indorm("住校内学生宿舍"),
-            dropdown_building(cfg.building),
-            text_room(cfg.room)
-        ) if cfg.inschool.startswith("在校") else
-        dropdown_inschool(cfg.inschool),
+#         dropdown_province("福建省"),
+#         dropdown_city("厦门市"),
+#         dropdown_district(cfg.district),
+#         dropdown_inschool(cfg.inschool).add_child(
+#             dropdown_campus(cfg.campus),
+#             dropdown_stay_in_school("住校内"),
+#             dropdown_indorm("住校内学生宿舍"),
+#             dropdown_building(cfg.building),
+#             text_room(cfg.room)
+#         ) if cfg.inschool.startswith("在校") else
+#         dropdown_inschool(cfg.inschool),
         dropdown_confirm(),
         click_save()
     )
@@ -126,7 +126,7 @@ def get_configs() -> List[Config]:
 
 def main():
     configs = get_configs()
-    logger.info(f"已配置 {len(configs)} 个账号")
+#     logger.info(f"已配置 {len(configs)} 个账号")
     for cfg in configs:
         logger.info(f"账号【{cfg.username}】正在运行")
         success = False
@@ -153,7 +153,7 @@ def main():
 
 if __name__ == '__main__':
 
-    if not debug and time.localtime().tm_hour < 11:
+    if not debug and time.localtime().tm_hour < 9:
         time_start: int = unix_timestamp()
         time_end: int = time_start + random_second()
 
