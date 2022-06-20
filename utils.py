@@ -22,7 +22,7 @@ def send_mail_ori(msg: str, title: str, to: str):
         logger.info(msg)
  
 def send_mail(msg: str, title: str, to: str):
-    msg += '\n\n早安！'
+    msg += '<br/><br/>早安！'
     mymail = "cdyang0912@163.com"
     msg = MIMEText(msg, "html", "utf-8")
     msg["From"] = formataddr(["Someone", mymail])
