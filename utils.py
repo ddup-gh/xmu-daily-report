@@ -26,6 +26,7 @@ def send_mail(msg: str, title: str, to: str):
     mymail = "cdyang0912@163.com"
     msg = MIMEText(msg, "html", "utf-8")
     msg["From"] = formataddr(["Someone", mymail])
+    msg["to"] = to
     msg["Subject"] = title
     
     server = smtplib.SMTP_SSL("smtp.163.com")
