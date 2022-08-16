@@ -140,6 +140,9 @@ def dropdown_district(data: str) -> Job:
                        f'//label[@title="{data}"][1]',
                        '区')
 
+def dropdown_hesuan(data: str) -> Job:
+    return TextJob(webdriver.get(), '//*[@id="datetime_1660308822369"]/div/div/span[1]', data, "核酸日期")
+
 
 def dropdown_confirm() -> Job:
     return DropdownJob(webdriver.get(), "//*[@id='select_1582538939790']/div/div/span[1]", "/html/body/div[8]/ul/div/div["
