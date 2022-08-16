@@ -141,6 +141,8 @@ def dropdown_district(data: str) -> Job:
                        '区')
 
 def dropdown_hesuan(data: str) -> Job:
+    js = "$('input:eq(0)').removeAttr('readonly')"
+    webdriver.get().execute_script(js)
     return TextJob(webdriver.get(), '//*[@id="datetime_1660308822369"]/div/div/span[1]', data, "核酸日期")
 
 
