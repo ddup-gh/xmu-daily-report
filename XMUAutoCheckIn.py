@@ -96,6 +96,7 @@ def checkin(cfg: Config, use_vpn=True) -> None:
 #             text_room(cfg.room)
 #         ) if cfg.inschool.startswith("在校") else
 #         dropdown_inschool(cfg.inschool),
+        dropdown_hesuan(cfg.hesuandata),
         dropdown_confirm(),
         click_save()
     )
