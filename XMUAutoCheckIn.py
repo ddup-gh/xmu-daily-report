@@ -11,7 +11,7 @@ import webdriver
 from config import Config, make_configs
 from job import click_given_xpath, click_mytable, dropdown_province, dropdown_city, dropdown_district, dropdown_confirm, \
     dropdown_inschool, dropdown_campus, dropdown_stay_in_school, dropdown_building, text_room, dropdown_indorm, \
-    click_save
+    click_save, dropdown_hesuan
 from log import logger
 from utils import fail, send_mail, debug
 from webdriver import close
@@ -96,7 +96,7 @@ def checkin(cfg: Config, use_vpn=True) -> None:
 #             text_room(cfg.room)
 #         ) if cfg.inschool.startswith("在校") else
 #         dropdown_inschool(cfg.inschool),
-        dropdown_hesuan(cfg.hesuandata),
+#         # dropdown_hesuan(cfg.hesuandata),
         dropdown_confirm(),
         click_save()
     )
